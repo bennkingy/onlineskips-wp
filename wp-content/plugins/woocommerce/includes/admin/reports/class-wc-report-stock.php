@@ -45,7 +45,7 @@ class WC_Report_Stock extends WP_List_Table
      */
     public function no_items()
     {
-        _e('Our skips are not available for the postcode you have enterd.', 'woocommerce');
+        _e('Sorry, our skips are not available in your postcode.', 'woocommerce');
     }
 
     /**

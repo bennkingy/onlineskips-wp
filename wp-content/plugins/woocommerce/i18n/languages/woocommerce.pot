@@ -12492,7 +12492,7 @@ msgid "Sales amount"
 msgstr ""
 
 #: includes/admin/reports/class-wc-report-stock.php:46
-msgid "Our skips are not available for the postcode you have enterd."
+msgid "Sorry, our skips are not available in your postcode."
 msgstr ""
 
 #: includes/admin/reports/class-wc-report-stock.php:142

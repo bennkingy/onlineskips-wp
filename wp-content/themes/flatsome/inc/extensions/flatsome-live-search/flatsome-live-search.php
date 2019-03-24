@@ -192,7 +192,7 @@ function flatsome_ajax_search()
     }
 
     if (empty($results)) {
-        $no_results = is_woocommerce_activated() ? __('<span id="wrongPostcode">Our skips are not available for the postcode you have enterd.</span>', 'woocommerce') : __('No matches found', 'flatsome');
+        $no_results = is_woocommerce_activated() ? __('<span id="wrongPostcode">Sorry, our skips are not available in your postcode.</span>', 'woocommerce') : __('No matches found', 'flatsome');
 
         $suggestions[] = array(
             'id'    => -1,
