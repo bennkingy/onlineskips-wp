@@ -183,3 +183,26 @@ function clear_the_cart_in_home_refresh()
     </script>
     <?php
 }
+add_filter('posts_search', function ($search, $q) {
+    // Target all search queries in the front-end:
+    if (is_admin() || ! $q->is_search()) {
+        return $search;
+    }
+
+    global $wpdb;
+
+    $exclude_words = [ 'foo', 'skip' ]; // <-- Modify this to your needs!
+
+    $sql = " AND {$wpdb->posts}.post_title   NOT LIKE '%%%s%%' 
+             AND {$wpdb->posts}.post_content NOT LIKE '%%%s%%' ";
+
+    foreach ((array) $exclude_words as $word) {
+        $search .= $wpdb->prepare(
+            $sql,
+            $wpdb->esc_like($word),
+            $wpdb->esc_like($word)
+        );
+    }
+
+    return $search;
+}, 10, 2);
